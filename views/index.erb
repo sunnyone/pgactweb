@@ -1,0 +1,38 @@
+<html>
+<head><title>Activity</title></head>
+
+<body>
+  <h1>Stat</h1>
+
+  <table border="1">
+    <tr>
+      <th>client_addr</th>
+      <th>backend_start</th>
+      <th>query_start</th>
+      <th>state_change</th>
+      <th>waiting</th>
+      <th>state</th>
+      <th>query</th>
+    </tr>
+
+    <% @table_data.each do |row| %>
+    <tr>
+      <% row.each do |col| %>
+        <td><%= h col %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+
+<script>
+  var func = function() {
+    setTimeout(function() {
+      location.reload();
+      func();
+    }, 1000);
+  };
+  func();
+</script>
+
+</body>
+</html>
